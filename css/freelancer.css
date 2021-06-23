@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/card.esn.pl/blob/master/LICENSE)
  */
 body {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden; }
 
 p {
@@ -27,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700; }
 
 hr.star-light,
@@ -44,10 +44,10 @@ hr.star-primary:after {
   font-family: FontAwesome;
   font-size: 2em;
   position: relative;
-  top: -.8em;
+  top: -0.8em;
   display: inline-block;
   padding: 0 0.25em;
-  content: '\f005'; }
+  content: "\f005"; }
 
 hr.star-light {
   border-color: white; }
@@ -72,7 +72,8 @@ section {
     font-size: 3em;
     margin: 0; }
 
-section.get-your-card {
+section.get-your-card,
+section.contact {
   color: white;
   background: #00aef0; }
 
