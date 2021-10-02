@@ -13,6 +13,9 @@
   ],
   "license": "MIT",
   "author": "IT Committee of ESN Poland",
+  "scripts": {
+    "dev": "gulp dev"
+  },
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
     "font-awesome": "4.7.0",
