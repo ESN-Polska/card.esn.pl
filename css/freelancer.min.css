@@ -238,23 +238,27 @@ header.masthead .intro-text .description {
 }
 #partners .partners-item .partners-link {
   position: relative;
+  width: 100%;
+  height: 100%;
   display: block;
-  max-width: 400px;
-  margin: 0 auto;
-  cursor: pointer;
 }
 #partners .partners-item .partners-link .caption {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  -webkit-transition: all ease 0.5s;
-  -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
   background: rgba(0, 174, 240, 0.9);
 }
 #partners .partners-item .partners-link .caption:hover {
   opacity: 1;
+}
+#partners .partners-item img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 #partners .partners-item .partners-link .caption .caption-content {
   font-size: 20px;
@@ -279,6 +283,8 @@ header.masthead .intro-text .description {
 @media (min-width: 767px) {
   #partners .partners-item {
     margin: 0 0 30px;
+    margin-bottom: 20px;
+    width: 100%;
   }
 }
 .partners-modal .modal-dialog {
