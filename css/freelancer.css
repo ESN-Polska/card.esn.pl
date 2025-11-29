@@ -5,6 +5,7 @@ body {
 
 p {
   font-size: 20px;
+  line-height: 1.6;
 }
 
 p.small {
@@ -74,7 +75,7 @@ hr.star-primary:after {
 }
 
 section {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 section h2 {
   font-size: 3em;
@@ -85,6 +86,10 @@ section.get-your-card,
 section.contact {
   color: white;
   background: #00aef0;
+}
+
+.who-can-get-esn-card {
+    background-color: #f8f9fa;
 }
 
 @media (max-width: 767px) {
@@ -625,3 +630,60 @@ footer .footer-below {
 }
 
 /*# sourceMappingURL=freelancer.css.map */
+
+#partners .partners-item {
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+}
+
+#partners .partners-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+}
+
+.who-can-get-esn-card .apply-block {
+    background: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.who-can-get-esn-card .apply-block:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.who-can-get-esn-card .apply-block::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: radial-gradient(circle, rgba(0, 174, 240, 0.5), transparent);
+    background-size: 200% 200%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.who-can-get-esn-card .apply-block:hover::before {
+    opacity: 1;
+}
+
+.who-can-get-esn-card .apply-block h4,
+.who-can-get-esn-card .apply-block p {
+    color: #333;
+}
+
+
+.btn-social:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
