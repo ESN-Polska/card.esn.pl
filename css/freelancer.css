@@ -31,44 +31,6 @@ h6 {
   font-weight: 700;
 }
 
-hr.star-light,
-hr.star-primary {
-  max-width: 250px;
-  margin: 25px auto 30px;
-  padding: 0;
-  text-align: center;
-  border: none;
-  border-top: solid 5px;
-}
-
-hr.star-light:after,
-hr.star-primary:after {
-  font-family: FontAwesome;
-  font-size: 2em;
-  position: relative;
-  top: -0.8em;
-  display: inline-block;
-  padding: 0 0.25em;
-  content: "\f005";
-}
-
-hr.star-light {
-  border-color: white;
-}
-
-hr.star-light:after {
-  color: white;
-  background-color: #00aef0;
-}
-
-hr.star-primary {
-  border-color: #2E3192;
-}
-
-hr.star-primary:after {
-  color: #2E3192;
-  background-color: white;
-}
 
 .img-centered {
   margin: 0 auto;
