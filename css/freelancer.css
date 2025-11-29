@@ -4,7 +4,8 @@ body {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 p.small {
@@ -30,55 +31,17 @@ h6 {
   font-weight: 700;
 }
 
-hr.star-light,
-hr.star-primary {
-  max-width: 250px;
-  margin: 25px auto 30px;
-  padding: 0;
-  text-align: center;
-  border: none;
-  border-top: solid 5px;
-}
-
-hr.star-light:after,
-hr.star-primary:after {
-  font-family: FontAwesome;
-  font-size: 2em;
-  position: relative;
-  top: -0.8em;
-  display: inline-block;
-  padding: 0 0.25em;
-  content: "\f005";
-}
-
-hr.star-light {
-  border-color: white;
-}
-
-hr.star-light:after {
-  color: white;
-  background-color: #00aef0;
-}
-
-hr.star-primary {
-  border-color: #2E3192;
-}
-
-hr.star-primary:after {
-  color: #2E3192;
-  background-color: white;
-}
 
 .img-centered {
   margin: 0 auto;
 }
 
 section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 section h2 {
-  font-size: 3em;
-  margin: 0;
+  font-size: 2.5em;
+  margin: 0 0 20px 0;
 }
 
 section.get-your-card,
@@ -87,12 +50,17 @@ section.contact {
   background: #00aef0;
 }
 
+#partners,
+.who-can-get-esn-card {
+    background-color: #f8f9fa;
+}
+
 @media (max-width: 767px) {
   section {
-    padding: 75px 0;
+    padding: 40px 0;
   }
   section.first {
-    padding-top: 75px;
+    padding-top: 40px;
   }
 }
 @media (max-width: 767px) {
@@ -203,43 +171,72 @@ a {
   }
 }
 header.masthead {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 40px;
   text-align: center;
   color: white;
   background: #00aef0;
 }
 header.masthead img {
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
+  max-width: 380px;
+}
+/* Subtle floating/bounce for the ESNcard hero image */
+@keyframes float-bounce {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+header.masthead img {
+  will-change: transform;
+  animation: float-bounce 3.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  header.masthead img:hover {
+    animation-duration: 0.9s;
+    animation-name: float-bounce;
+    transform: translateY(-18px) scale(1.04);
+    transition: transform 0.25s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.masthead img {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 header.masthead .intro-text .name {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2em;
+  font-size: 1.75em;
   font-weight: 700;
   display: block;
+  margin-bottom: 12px;
 }
 header.masthead .intro-text .description {
-  font-size: 1.25em;
+  font-size: 1.1em;
   font-weight: 300;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 80px;
   }
   header.masthead .intro-text .name {
-    font-size: 4.75em;
+    font-size: 3.5em;
   }
   header.masthead .intro-text .description {
-    font-size: 1.75em;
+    font-size: 1.5em;
   }
 }
-#partners .partners-item {
-  right: 0;
-  margin: 0 0 15px;
-}
+
 #partners .partners-item .partners-link {
   position: relative;
   display: block;
@@ -625,3 +622,222 @@ footer .footer-below {
 }
 
 /*# sourceMappingURL=freelancer.css.map */
+
+#partners .partners-item {
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+#partners .partners-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+#partners .partners-item::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: radial-gradient(circle, rgba(0, 174, 240, 0.5), transparent);
+    background-size: 200% 200%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#partners .partners-item:hover::before {
+    opacity: 1;
+}
+
+.who-can-get-esn-card .apply-block {
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 24px;
+}
+
+.who-can-get-esn-card .apply-block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Get-your-card specific card styling to match provided design */
+section.get-your-card .apply-block {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px 20px;
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.06), 0 4px 12px rgba(16, 24, 40, 0.03);
+  border: 1px solid rgba(46,49,146,0.05);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Control horizontal spacing between the three cards */
+section.get-your-card .row {
+  display: flex;
+  gap: 30px; /* adjust this value to increase/decrease horizontal spacing */
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+section.get-your-card .col-sm-4 {
+  flex: 0 1 320px; /* card base width */
+  max-width: 360px;
+}
+
+section.get-your-card .apply-block:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(16, 24, 40, 0.08), 0 8px 24px rgba(16, 24, 40, 0.05);
+}
+
+section.get-your-card .apply-title {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 6px 0 18px 0;
+  color: #1f2937;
+}
+
+.apply-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-order {
+  display: inline-block;
+  padding: 20px 44px;
+  border-radius: 48px;
+  border: 2.5px solid #2E3192;
+  color: #2E3192;
+  background: #ffffff;
+  font-weight: 800;
+  font-size: 22px;
+  text-decoration: none;
+  line-height: 1.05;
+  box-shadow: 0 6px 18px rgba(46,49,146,0.05) inset, 0 6px 18px rgba(16,24,40,0.04);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, color 0.16s ease;
+}
+
+.btn-order:hover,
+.btn-order:focus {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 14px 36px rgba(46,49,146,0.10);
+  color: #1b1464;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .btn-order {
+    padding: 14px 28px;
+    font-size: 18px;
+    border-width: 2px;
+  }
+  section.get-your-card .apply-block {
+    padding: 20px 14px;
+  }
+  section.get-your-card .row {
+    gap: 18px;
+  }
+  section.get-your-card .col-sm-4 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.who-can-get-esn-card .apply-block::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: radial-gradient(circle, rgba(0, 174, 240, 0.5), transparent);
+    background-size: 200% 200%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.who-can-get-esn-card .apply-block:hover::before {
+    opacity: 1;
+}
+
+.who-can-get-esn-card .apply-block h4,
+.who-can-get-esn-card .apply-block p {
+    color: #333;
+}
+
+
+.btn-social:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Morphing 'Apply now' button used in the Get your ESNcard section */
+.btn-morph {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 28px;
+  background: linear-gradient(90deg, #00aef0 0%, #2E3192 100%);
+  box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: morph-shape 4s ease-in-out infinite;
+}
+
+@keyframes morph-shape {
+  0% {
+    border-radius: 28px;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
+  }
+  25% {
+    border-radius: 38px 18px 32px 22px;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 174, 240, 0.18);
+  }
+  50% {
+    border-radius: 18px 32px 24px 40px;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
+  }
+  75% {
+    border-radius: 36px 20px 28px 18px;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0, 174, 240, 0.18);
+  }
+  100% {
+    border-radius: 28px;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
+  }
+}
+
+.btn-morph:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 20px 40px rgba(0, 174, 240, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-morph {
+    animation: none !important;
+    transition: transform 0.12s ease !important;
+  }
+}
