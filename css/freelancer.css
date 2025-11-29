@@ -182,6 +182,34 @@ header.masthead img {
   margin: 0 auto 15px;
   max-width: 380px;
 }
+/* Subtle floating/bounce for the ESNcard hero image */
+@keyframes float-bounce {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+header.masthead img {
+  will-change: transform;
+  animation: float-bounce 3.6s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  header.masthead img:hover {
+    animation-duration: 0.9s;
+    animation-name: float-bounce;
+    transform: translateY(-18px) scale(1.04);
+    transition: transform 0.25s ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.masthead img {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 header.masthead .intro-text .name {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.75em;
