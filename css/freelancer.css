@@ -357,7 +357,8 @@ header.masthead .intro-text .description {
   border-bottom: 1px solid rgb(238.425, 238.425, 238.425);
 }
 .floating-label-form-group input,
-.floating-label-form-group textarea {
+.floating-label-form-group textarea,
+.floating-label-form-group select {
   font-size: 1.5em;
   position: relative;
   z-index: 1;
@@ -841,3 +842,27 @@ section.get-your-card .apply-title {
     transition: transform 0.12s ease !important;
   }
 }
+
+/* Contact Form Card Styles */
+.contact-form-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: #222; /* gray-darker */
+}
+
+.contact-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form-card .form-control {
+  color: #222;
+}
+
+.contact-form-card ::-webkit-input-placeholder { color: #777; }
+.contact-form-card :-moz-placeholder { color: #777; }
+.contact-form-card ::-moz-placeholder { color: #777; }
+.contact-form-card :-ms-input-placeholder { color: #777; }
