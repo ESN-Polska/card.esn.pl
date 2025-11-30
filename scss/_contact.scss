@@ -5,7 +5,8 @@
   padding-bottom: 0.5em;
   border-bottom: 1px solid $gray-lighter;
   input,
-  textarea {
+  textarea,
+  select {
     font-size: 1.5em;
     position: relative;
     z-index: 1;
@@ -70,5 +71,39 @@ footer {
   .footer-below {
     padding: 25px 0;
     background-color: darken($theme-primary, .05);
+  }
+}
+
+// Contact Form Card Styles
+.contact-form-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: $gray-darker; // Ensure text is visible
+
+  &:hover {
+    transform: translateY(-5px); // Push effect
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  // Override input/textarea text color to ensure visibility
+  .form-control {
+    color: $gray-darker;
+  }
+
+  // Adjust placeholder color
+  ::-webkit-input-placeholder {
+    color: $gray-light;
+  }
+  :-moz-placeholder {
+    color: $gray-light;
+  }
+  ::-moz-placeholder {
+    color: $gray-light;
+  }
+  :-ms-input-placeholder {
+    color: $gray-light;
   }
 }
