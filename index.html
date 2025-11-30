@@ -271,8 +271,15 @@ window.cookieconsent.initialise({
               <form name="sentMessage" id="contactForm" action="https://formsubmit.co/webshop@esn.pl" method="POST" novalidate>
                 <!-- Hidden fields for FormSubmit configuration -->
                 <input type="hidden" name="_cc" value="webshop@esn.pl"> <!-- CC to webshop@esn.pl -->
-                <input type="hidden" name="_subject" value="New ESNcard Contact Form Submission">
+                <input type="hidden" name="_subject" id="emailSubject" value="New ESNcard Contact Form Submission">
                 <input type="hidden" name="_captcha" value="false"> <!-- Set to true to enable captcha -->
+                <script>
+                  // Generate unique subject line with timestamp to prevent email threading
+                  document.getElementById('contactForm').addEventListener('submit', function() {
+                    var timestamp = new Date().toISOString();
+                    document.getElementById('emailSubject').value = "ESNcard Contact - " + timestamp;
+                  });
+                </script>
                 <div class="control-group">
                   <div class="form-group floating-label-form-group controls">
                     <label>Name</label>
