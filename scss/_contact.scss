@@ -76,12 +76,12 @@ footer {
 
 // Contact Form Card Styles
 .contact-form-card {
-  background-color: white;
+  background-color: $theme-success;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  color: $gray-darker; // Ensure text is visible
+  color: white;
 
   &:hover {
     transform: translateY(-5px); // Push effect
@@ -90,20 +90,21 @@ footer {
 
   // Override input/textarea text color to ensure visibility
   .form-control {
-    color: $gray-darker;
+    color: white;
+    border-bottom: 1px solid white;
   }
 
   // Adjust placeholder color
   ::-webkit-input-placeholder {
-    color: $gray-light;
+    color: rgba(255, 255, 255, 0.7);
   }
   :-moz-placeholder {
-    color: $gray-light;
+    color: rgba(255, 255, 255, 0.7);
   }
   ::-moz-placeholder {
-    color: $gray-light;
+    color: rgba(255, 255, 255, 0.7);
   }
   :-ms-input-placeholder {
-    color: $gray-light;
+    color: rgba(255, 255, 255, 0.7);
   }
 }

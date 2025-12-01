@@ -1,0 +1,82 @@
+// Styling for the "Get your ESNcard" interactive cards
+
+.esn-card-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    
+    .btn-order {
+      background-color: $theme-primary;
+      color: #fff;
+      border-color: $theme-primary;
+    }
+  }
+
+  .card-img {
+    max-height: 180px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 0 auto 25px;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  &:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .apply-title {
+    color: $theme-primary;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+
+  .card-description {
+    color: $gray-dark;
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .apply-cta-wrap {
+    margin-top: auto;
+  }
+
+  .btn-order {
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-color: transparent;
+    color: $theme-primary;
+    border: 2px solid $theme-primary;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Ensure the section background contrasts well with the white cards
+section.get-your-card {
+    // The background color is already set in _global.scss, but we can ensure it here or leave it.
+    // We might want to add a subtle pattern or gradient if requested later.
+}

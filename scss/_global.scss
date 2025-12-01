@@ -74,13 +74,17 @@ section {
   padding: 100px 0;
   h2 {
     font-size: 3em;
-    margin: 0;
+    margin: 0 0 50px 0;
   }
 }
-section.get-your-card,
-section.contact {
+section.get-your-card {
   color: white;
   background: $theme-success;
+}
+
+section.contact {
+  background: white;
+  color: $theme-primary;
 }
 @media (max-width: 767px) {
   section {

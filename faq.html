@@ -25,7 +25,7 @@
       rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
+    <link href="css/freelancer.css" rel="stylesheet">
 
     <!--Google Analytics -->
     <script>
@@ -106,10 +106,20 @@ window.cookieconsent.initialise({
 
     <!-- FAQ Section -->
     <section id="faq" style="padding-top: 120px;">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
+            <div class="container">
+                <h2 class="text-center">Frequently Asked Questions</h2>
+                <!-- Search Bar -->
+
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="faq-search-wrapper">
+                            <i class="fa fa-search faq-search-icon"></i>
+                            <input type="text" id="faq-search" class="form-control faq-search-input" placeholder="Type your question here...">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
                     <div class="faq-item">
                         <div class="faq-question">
                             <h4>Does this shop work worldwide?</h4>
@@ -364,9 +374,41 @@ window.cookieconsent.initialise({
 
       <!-- Plugin JavaScript -->
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
       <!-- Custom scripts for this template -->
-      <script src="js/freelancer.min.js"></script>
+      <script src="js/freelancer.js"></script>
+
+      <!-- FAQ Animation and Accordion Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const searchInput = document.getElementById('faq-search');
+          const faqItems = document.querySelectorAll('.faq-item');
+
+          function filterFAQs() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            faqItems.forEach(item => {
+              const questionText = item.querySelector('.faq-question h4').textContent.toLowerCase();
+              const answerText = item.querySelector('.faq-answer p').textContent.toLowerCase();
+              
+              if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          }
+
+          if (searchInput) {
+            searchInput.addEventListener('input', filterFAQs);
+          }
+      
+          faqItems.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.add('visible');
+            }, index * 120); // 80ms delay for a snappier feel
+          });
+        });
+      </script>
 
     </body>
 

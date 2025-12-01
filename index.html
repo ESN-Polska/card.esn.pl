@@ -26,6 +26,17 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.css" rel="stylesheet">
+    
+    <style>
+    header.masthead .intro-text .description {
+      word-break: keep-all !important;
+      overflow-wrap: anywhere !important;
+      hyphens: none !important;
+      -webkit-hyphens: none !important;
+      -moz-hyphens: none !important;
+      -ms-hyphens: none !important;
+    }
+    </style>
 
     <!--Google Analytics -->
     <script>
@@ -89,10 +100,7 @@ window.cookieconsent.initialise({
               <a class="nav-link js-scroll-trigger" href="#get-your-card">Get
                 your ESNcard</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger"
-                href="#who-can-get-esn-card">Who can get ESNcard</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="faq.html">FAQ</a>
             </li>
@@ -110,17 +118,7 @@ window.cookieconsent.initialise({
         <img class="img-fluid" src="img/esncard.png" alt>
         <div class="intro-text">
           <span class="name">What is ESNcard?</span>
-          <span class="description">The <b>ESNcard</b> is the membership card of
-            the Erasmus Student Network (ESN).
-            It is a <b>proof of membership</b> in an ESN section and so
-            indirectly of the ESN network. The ESNcard
-            is also used as a discount card in many cities and countries around
-            Europe. Its main objective
-            is to support and give opportunities to international students
-            during and after their exchange
-            period. The ESNcard is used annually by over <b>200.000 students in
-              over 40 countries</b>, and the numbers
-            are growing every year.</span>
+          <span class="description" id="typewriter-text">The <b>ESNcard</b> is the membership card of the Erasmus Student Network (ESN). It is a <b>proof of membership</b> in an ESN section and so indirectly of the ESN network. The ESNcard is also used as a discount card in many cities and countries around Europe. Its main objective is to support and give opportunities to international students during and after their exchange period. The ESNcard is used annually by over <b>200,000 students in over 40 countries</b>, and the numbers are growing every year.</span>
         </div>
       </div>
     </header>
@@ -182,22 +180,34 @@ window.cookieconsent.initialise({
       <div class="container">
         <h2 class="text-center">Get your ESNcard</h2>
         <div class="row">
-          <div class="col-sm-4 apply-block">
-            <h4 class="apply-title">International Student</h4>
-            <div class="apply-cta-wrap">
-              <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1350&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for International Student">Order Now</a>
+          <div class="col-md-4 mb-4">
+            <div class="esn-card-item">
+              <img src="img/person1.png" alt="International Student" class="card-img img-fluid">
+              <h4 class="apply-title">International Student</h4>
+              <p class="card-description">Erasmus+, EVS, any other exchange programme or full-time student studying in Poland.</p>
+              <div class="apply-cta-wrap">
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1350&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for International Student">Order Now</a>
+              </div>
             </div>
           </div>
-          <div class="col-sm-4 apply-block">
-            <h4 class="apply-title">Buddy</h4>
-            <div class="apply-cta-wrap">
-              <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1351&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for Buddy">Order Now</a>
+          <div class="col-md-4 mb-4">
+            <div class="esn-card-item">
+              <img src="img/person2.png" alt="Buddy" class="card-img img-fluid">
+              <h4 class="apply-title">Buddy</h4>
+              <p class="card-description">An internal mentor programme managed by ESN sections in Poland.</p>
+              <div class="apply-cta-wrap">
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1351&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for Buddy">Order Now</a>
+              </div>
             </div>
           </div>
-          <div class="col-sm-4 apply-block">
-            <h4 class="apply-title">ESNer</h4>
-            <div class="apply-cta-wrap">
-              <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1352&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for ESNer">Order Now</a>
+          <div class="col-md-4 mb-4">
+            <div class="esn-card-item">
+              <img src="img/person3.png" alt="ESNer" class="card-img img-fluid">
+              <h4 class="apply-title">ESNer</h4>
+              <p class="card-description">An active volunteer in Poland.</p>
+              <div class="apply-cta-wrap">
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1352&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for ESNer">Order Now</a>
+              </div>
             </div>
           </div>
         </div>
@@ -233,33 +243,7 @@ window.cookieconsent.initialise({
       </div>
     </section>
 
-    <section class="who-can-get-esn-card" id="who-can-get-esn-card">
-      <div class="container">
-        <h2 class="text-center">Who can get an ESNcard?</h2>
-        <p class="text-center">To become a member of our wonderful community you
-          need to be: </p>
-        <div class="row">
-          <div class="col-sm-4 apply-block">
-            <img class="img-fluid" src="img/person1.png" alt>
-            <h4 class="text-center">International student or&#160;intern</h4>
-            <p class="text-center"> Erasmus+, EVS, any other exchange programme
-              or full-time student studying in Poland</p>
-          </div>
-          <div class="col-sm-4 apply-block">
-            <img class="img-fluid" src="img/person2.png" alt>
-            <h4 class="text-center">Buddy</h4>
-            <p class="text-center">An internal mentor programme managed by ESN
-              sections in Poland</p>
 
-          </div>
-          <div class="col-sm-4 apply-block">
-            <img class="img-fluid" src="img/person3.png" alt>
-            <h4 class="text-center">ESNer</h4>
-            <p class="text-center">Active Volunteer in Poland</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -374,7 +358,7 @@ window.cookieconsent.initialise({
                 <br>
                 <div id="success"></div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Send</button>
+                  <button type="submit" class="btn btn-primary btn-lg" id="sendMessageButton">Send</button>
                 </div>
               </form>
             </div>
@@ -667,8 +651,21 @@ window.cookieconsent.initialise({
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
       <!-- Custom scripts for this template -->
-      <script src="js/freelancer.min.js"></script>
+      <script src="js/freelancer.js"></script>
 
+      <!-- FAQ Accordion Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const faqItems = document.querySelectorAll('.faq-item');
+      
+          faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+              item.classList.toggle('active');
+            });
+          });
+        });
+      </script>
     </body>
 
   </html>
