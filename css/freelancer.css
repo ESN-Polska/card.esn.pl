@@ -4,8 +4,7 @@ body {
 }
 
 p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 20px;
 }
 
 p.small {
@@ -31,36 +30,73 @@ h6 {
   font-weight: 700;
 }
 
+hr.star-light,
+hr.star-primary {
+  max-width: 250px;
+  margin: 25px auto 30px;
+  padding: 0;
+  text-align: center;
+  border: none;
+  border-top: solid 5px;
+}
+
+hr.star-light:after,
+hr.star-primary:after {
+  font-family: FontAwesome;
+  font-size: 2em;
+  position: relative;
+  top: -0.8em;
+  display: inline-block;
+  padding: 0 0.25em;
+  content: "\f005";
+}
+
+hr.star-light {
+  border-color: white;
+}
+
+hr.star-light:after {
+  color: white;
+  background-color: #00aef0;
+}
+
+hr.star-primary {
+  border-color: #2E3192;
+}
+
+hr.star-primary:after {
+  color: #2E3192;
+  background-color: white;
+}
 
 .img-centered {
   margin: 0 auto;
 }
 
 section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 section h2 {
-  font-size: 2.5em;
-  margin: 0 0 20px 0;
+  font-size: 3em;
+  margin: 0 0 50px 0;
 }
 
-section.get-your-card,
-section.contact {
+section.get-your-card {
   color: white;
   background: #00aef0;
 }
 
-#partners,
-.who-can-get-esn-card {
-    background-color: #f8f9fa;
+section.contact {
+  background: white;
+  color: #2E3192;
 }
 
 @media (max-width: 767px) {
   section {
-    padding: 40px 0;
+    padding: 75px 0;
   }
   section.first {
-    padding-top: 40px;
+    padding-top: 75px;
   }
 }
 @media (max-width: 767px) {
@@ -171,72 +207,51 @@ a {
   }
 }
 header.masthead {
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 100px;
+  padding-bottom: 50px;
   text-align: center;
   color: white;
   background: #00aef0;
 }
 header.masthead img {
   display: block;
-  margin: 0 auto 15px;
-  max-width: 380px;
-}
-/* Subtle floating/bounce for the ESNcard hero image */
-@keyframes float-bounce {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-12px) scale(1.02); }
-  100% { transform: translateY(0) scale(1); }
-}
-
-header.masthead img {
-  will-change: transform;
-  animation: float-bounce 3.6s ease-in-out infinite;
-  transform-origin: center bottom;
-}
-
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  header.masthead img:hover {
-    animation-duration: 0.9s;
-    animation-name: float-bounce;
-    transform: translateY(-18px) scale(1.04);
-    transition: transform 0.25s ease-out;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  header.masthead img {
-    animation: none !important;
-    transition: none !important;
-  }
+  margin: 0 auto 20px;
 }
 header.masthead .intro-text .name {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.75em;
+  font-size: 2em;
   font-weight: 700;
   display: block;
-  margin-bottom: 12px;
 }
 header.masthead .intro-text .description {
-  font-size: 1.1em;
+  font-size: 1.25em;
   font-weight: 300;
-  margin: 0 auto;
-  max-width: 900px;
 }
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: 200px;
+    padding-bottom: 100px;
   }
   header.masthead .intro-text .name {
-    font-size: 3.5em;
+    font-size: 4.75em;
   }
   header.masthead .intro-text .description {
-    font-size: 1.5em;
+    font-size: 1.75em;
   }
 }
-
+#partners .partners-item {
+  right: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+#partners .partners-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
 #partners .partners-item .partners-link {
   position: relative;
   display: block;
@@ -352,9 +367,9 @@ header.masthead .intro-text .description {
 
 .floating-label-form-group {
   position: relative;
-  margin-bottom: 0;
-  padding-bottom: 0.5em;
-  border-bottom: 1px solid rgb(238.425, 238.425, 238.425);
+  margin-bottom: 1.5em;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 .floating-label-form-group input,
 .floating-label-form-group textarea,
@@ -362,13 +377,14 @@ header.masthead .intro-text .description {
   font-size: 1.5em;
   position: relative;
   z-index: 1;
-  padding-right: 0;
-  padding-left: 0;
+  padding: 15px;
   resize: none;
-  border: none;
-  border-radius: 0;
-  background: none;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: none !important;
+  width: 100%;
+  color: white;
 }
 .floating-label-form-group label {
   font-size: 0.85em;
@@ -387,8 +403,8 @@ header.masthead .intro-text .description {
   opacity: 0;
 }
 .floating-label-form-group:not(:first-child) {
-  padding-left: 14px;
-  border-left: 1px solid rgb(238.425, 238.425, 238.425);
+  padding-left: 0;
+  border-left: none;
 }
 
 .floating-label-form-group-with-value label {
@@ -401,7 +417,7 @@ header.masthead .intro-text .description {
 }
 
 form .row:first-child .floating-label-form-group {
-  border-top: 1px solid rgb(238.425, 238.425, 238.425);
+  border-top: none;
 }
 
 footer {
@@ -420,6 +436,37 @@ footer .footer-col {
 footer .footer-below {
   padding: 25px 0;
   background-color: rgb(45.93890625, 48.934921875, 145.80609375);
+}
+
+.contact-form-card {
+  background-color: #00aef0;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: white;
+}
+.contact-form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.contact-form-card .form-control {
+  color: white;
+}
+.contact-form-card .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.contact-form-card ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.contact-form-card :-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.contact-form-card ::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.contact-form-card :-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .btn-outline {
@@ -622,247 +669,86 @@ footer .footer-below {
   transform: rotate(45deg);
 }
 
-/*# sourceMappingURL=freelancer.css.map */
-
-#partners .partners-item {
+.esn-card-item {
   background: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease-in-out;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 24px;
-}
-
-#partners .partners-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-#partners .partners-item::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    background: radial-gradient(circle, rgba(0, 174, 240, 0.5), transparent);
-    background-size: 200% 200%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: -1;
-    filter: blur(20px);
-}
-
-#partners .partners-item:hover::before {
-    opacity: 1;
-}
-
-.who-can-get-esn-card .apply-block {
-  background: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.25s ease-in-out;
-  position: relative;
-  z-index: 1;
-  margin-bottom: 24px;
-}
-
-.who-can-get-esn-card .apply-block:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-}
-
-/* Get-your-card specific card styling to match provided design */
-section.get-your-card .apply-block {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px 20px;
-  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.06), 0 4px 12px rgba(16, 24, 40, 0.03);
-  border: 1px solid rgba(46,49,146,0.05);
+  border-radius: 15px;
+  padding: 40px 30px;
+  margin-bottom: 30px;
   text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Control horizontal spacing between the three cards */
-section.get-your-card .row {
-  display: flex;
-  gap: 30px; /* adjust this value to increase/decrease horizontal spacing */
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-
-section.get-your-card .col-sm-4 {
-  flex: 0 1 320px; /* card base width */
-  max-width: 360px;
-}
-
-section.get-your-card .apply-block:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 48px rgba(16, 24, 40, 0.08), 0 8px 24px rgba(16, 24, 40, 0.05);
-}
-
-section.get-your-card .apply-title {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  margin: 6px 0 18px 0;
-  color: #1f2937;
-}
-
-.apply-cta-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.btn-order {
-  display: inline-block;
-  padding: 20px 44px;
-  border-radius: 48px;
-  border: 2.5px solid #2E3192;
-  color: #2E3192;
-  background: #ffffff;
-  font-weight: 800;
-  font-size: 22px;
-  text-decoration: none;
-  line-height: 1.05;
-  box-shadow: 0 6px 18px rgba(46,49,146,0.05) inset, 0 6px 18px rgba(16,24,40,0.04);
-  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, color 0.16s ease;
-}
-
-.btn-order:hover,
-.btn-order:focus {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 14px 36px rgba(46,49,146,0.10);
-  color: #1b1464;
-  text-decoration: none;
-}
-
-@media (max-width: 767px) {
-  .btn-order {
-    padding: 14px 28px;
-    font-size: 18px;
-    border-width: 2px;
-  }
-  section.get-your-card .apply-block {
-    padding: 20px 14px;
-  }
-  section.get-your-card .row {
-    gap: 18px;
-  }
-  section.get-your-card .col-sm-4 {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-.who-can-get-esn-card .apply-block::before {
-    content: '';
-    position: absolute;
-    top: -2px; left: -2px; right: -2px; bottom: -2px;
-    background: radial-gradient(circle, rgba(0, 174, 240, 0.5), transparent);
-    background-size: 200% 200%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: -1;
-    filter: blur(20px);
-}
-
-.who-can-get-esn-card .apply-block:hover::before {
-    opacity: 1;
-}
-
-.who-can-get-esn-card .apply-block h4,
-.who-can-get-esn-card .apply-block p {
-    color: #333;
-}
-
-
-.btn-social:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* Morphing 'Apply now' button used in the Get your ESNcard section */
-.btn-morph {
-  display: inline-block;
-  font-size: 16px;
-  font-weight: 800;
-  color: white;
-  padding: 10px 22px;
-  border-radius: 28px;
-  background: linear-gradient(90deg, #00aef0 0%, #2E3192 100%);
-  box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
-  text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  animation: morph-shape 4s ease-in-out infinite;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.esn-card-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.esn-card-item:hover .btn-order {
+  background-color: #2E3192;
+  color: #fff;
+  border-color: #2E3192;
+}
+.esn-card-item .card-img {
+  max-height: 180px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  margin: 0 auto 25px;
+  transition: all 0.3s ease;
+  display: block;
+}
+.esn-card-item:hover .card-img {
+  transform: scale(1.05);
+}
+.esn-card-item .apply-title {
+  color: #2E3192;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+.esn-card-item .card-description {
+  color: #333333;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+.esn-card-item .apply-cta-wrap {
+  margin-top: auto;
+}
+.esn-card-item .btn-order {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: transparent;
+  color: #2E3192;
+  border: 2px solid #2E3192;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.esn-card-item .btn-order:hover {
+  text-decoration: none;
 }
 
-@keyframes morph-shape {
+@keyframes float {
   0% {
-    border-radius: 28px;
-    transform: translateY(0) scale(1);
-    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
-  }
-  25% {
-    border-radius: 38px 18px 32px 22px;
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 14px 30px rgba(0, 174, 240, 0.18);
+    transform: translate(0, 0px);
   }
   50% {
-    border-radius: 18px 32px 24px 40px;
-    transform: translateY(0) scale(1);
-    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
-  }
-  75% {
-    border-radius: 36px 20px 28px 18px;
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 14px 30px rgba(0, 174, 240, 0.18);
+    transform: translate(0, 15px);
   }
   100% {
-    border-radius: 28px;
-    transform: translateY(0) scale(1);
-    box-shadow: 0 10px 22px rgba(0, 174, 240, 0.16);
+    transform: translate(0, -0px);
   }
 }
 
-.btn-morph:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 20px 40px rgba(0, 174, 240, 0.22);
+header.masthead img {
+  animation: float 3s ease-in-out infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn-morph {
-    animation: none !important;
-    transition: transform 0.12s ease !important;
-  }
-}
-
-/* Contact Form Card Styles */
-.contact-form-card {
-  background-color: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  color: #222; /* gray-darker */
-}
-
-.contact-form-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form-card .form-control {
-  color: #222;
-}
-
-.contact-form-card ::-webkit-input-placeholder { color: #777; }
-.contact-form-card :-moz-placeholder { color: #777; }
-.contact-form-card ::-moz-placeholder { color: #777; }
-.contact-form-card :-ms-input-placeholder { color: #777; }
+/*# sourceMappingURL=freelancer.css.map */
