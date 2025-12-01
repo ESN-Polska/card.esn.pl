@@ -652,6 +652,19 @@ window.cookieconsent.initialise({
       <!-- Custom scripts for this template -->
       <script src="js/freelancer.min.js"></script>
 
+      <!-- FAQ Accordion Script -->
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const faqItems = document.querySelectorAll('.faq-item');
+      
+          faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+              item.classList.toggle('active');
+            });
+          });
+        });
+      </script>
     </body>
 
   </html>
