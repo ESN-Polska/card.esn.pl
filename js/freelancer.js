@@ -60,51 +60,66 @@
 document.addEventListener('DOMContentLoaded', function() {
   const elementId = 'typewriter-text';
   const element = document.getElementById(elementId);
-  
   if (!element) return;
 
-  // Get the HTML content and normalize whitespace
-  const originalHTML = element.innerHTML;
-  
-  // Store the original content
+  // 1. Pre-process the DOM to wrap words for non-breaking behavior
   const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = originalHTML;
-  
-  // Normalize text content while preserving HTML tags
-  function normalizeWhitespace(html) {
-    // Replace multiple spaces/newlines with single space
-    return html.replace(/\s+/g, ' ').trim();
-  }
-  
-  const normalizedHTML = normalizeWhitespace(originalHTML);
-  element.innerHTML = normalizedHTML;
-  
-  // Helper to wrap characters in spans
-  function wrapCharacters(node) {
+  // Normalize whitespace and handle entities, then parse into a DOM structure
+  tempDiv.innerHTML = element.innerHTML.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+
+  const fragment = document.createDocumentFragment();
+  Array.from(tempDiv.childNodes).forEach(node => {
     if (node.nodeType === 3) { // Text node
+      const words = node.textContent.split(' ');
+      words.forEach((word, index) => {
+        if (word) {
+          const wordSpan = document.createElement('span');
+          wordSpan.style.display = 'inline-block';
+          wordSpan.textContent = word;
+          fragment.appendChild(wordSpan);
+        }
+        // Add a space back between words from the same text node
+        if (index < words.length - 1) {
+          fragment.appendChild(document.createTextNode(' '));
+        }
+      });
+    } else if (node.nodeType === 1) { // Element node (e.g., <b>)
+      // Wrap element nodes in a non-breaking span
+      const wordSpan = document.createElement('span');
+      wordSpan.style.display = 'inline-block';
+      wordSpan.appendChild(node.cloneNode(true));
+      fragment.appendChild(wordSpan);
+    }
+  });
+
+  // Replace original content with the new, robustly-spaced structure
+  element.innerHTML = '';
+  element.appendChild(fragment);
+
+  // 2. Now, wrap characters for the animation
+  function wrapCharacters(node) {
+    if (node.nodeType === 3) { // Text nodes (the spaces between word-spans)
       const text = node.nodeValue;
-      
-      const fragment = document.createDocumentFragment();
+      const charFragment = document.createDocumentFragment();
       for (let char of text) {
         const span = document.createElement('span');
         span.textContent = char;
         span.style.opacity = '0';
         span.className = 'typewriter-char';
-        fragment.appendChild(span);
+        charFragment.appendChild(span);
       }
-      node.parentNode.replaceChild(fragment, node);
-    } else if (node.nodeType === 1) { // Element node (like <b>)
+      if (node.parentNode) {
+        node.parentNode.replaceChild(charFragment, node);
+      }
+    } else if (node.nodeType === 1) { // Element nodes (our word-spans)
       Array.from(node.childNodes).forEach(wrapCharacters);
     }
   }
 
-  // Initial setup: wrap all characters
   wrapCharacters(element);
-  
-  // Ensure the container is visible
   element.style.visibility = 'visible';
 
-  // Intersection Observer to trigger animation
+  // 3. Animation logic (same as before)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -112,12 +127,12 @@ document.addEventListener('DOMContentLoaded', function() {
         chars.forEach((char, index) => {
           setTimeout(() => {
             char.style.opacity = '1';
-          }, index *15); // 20ms typing speed
+          }, index * 15);
         });
-        observer.disconnect(); // Run once
+        observer.disconnect();
       }
     });
-  }, { threshold: 0.1 }); // Start when 10% is visible
+  }, { threshold: 0.1 });
 
   observer.observe(element);
 });

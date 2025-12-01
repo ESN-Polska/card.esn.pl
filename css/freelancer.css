@@ -226,6 +226,12 @@ header.masthead .intro-text .name {
 header.masthead .intro-text .description {
   font-size: 1.25em;
   font-weight: 300;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
 }
 
 @media (min-width: 768px) {
@@ -238,6 +244,12 @@ header.masthead .intro-text .description {
   }
   header.masthead .intro-text .description {
     font-size: 1.75em;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
   }
 }
 /* Partners Section - Modern Design */
