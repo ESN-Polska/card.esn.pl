@@ -387,6 +387,16 @@ header.masthead .intro-text .description {
     margin: 0 0 40px;
   }
 }
+@media (max-width: 767px) {
+  #partners .partners-item {
+    margin: 0 0 20px;
+    padding: 0;
+    width: 75%; /* Reduce the width of the partner items */
+    margin-left: auto; /* Center the items horizontally */
+    margin-right: auto;
+
+  }
+}
 .partners-modal .modal-dialog {
   max-width: 100%;
   min-height: 100%;
