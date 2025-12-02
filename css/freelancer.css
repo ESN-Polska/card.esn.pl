@@ -237,19 +237,33 @@ header.masthead .intro-text .description {
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 200px;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
   }
   header.masthead .intro-text .name {
     font-size: 4.75em;
   }
   header.masthead .intro-text .description {
-    font-size: 1.75em;
+    font-size: 1.5em;
     word-break: normal;
     overflow-wrap: normal;
     hyphens: none;
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header.masthead {
+    padding-top: 70px; /* Reduce top padding for mobile */
+    padding-bottom: 30px; /* Reduce bottom padding for mobile */
+  }
+  header.masthead img {
+    max-width: 70%; /* Make the image smaller on mobile */
+    margin-bottom: 15px; /* Adjust margin below the image */
+  }
+  header.masthead .intro-text .description {
+    font-size: 1em; /* Slightly reduce font size for description on mobile */
   }
 }
 /* Partners Section - Modern Design */
@@ -385,6 +399,16 @@ header.masthead .intro-text .description {
 @media (min-width: 767px) {
   #partners .partners-item {
     margin: 0 0 40px;
+  }
+}
+@media (max-width: 767px) {
+  #partners .partners-item {
+    margin: 0 0 20px;
+    padding: 0;
+    width: 75%; /* Reduce the width of the partner items */
+    margin-left: auto; /* Center the items horizontally */
+    margin-right: auto;
+
   }
 }
 .partners-modal .modal-dialog {
@@ -891,7 +915,7 @@ footer .footer-below {
 }
 .esn-card-item .card-description {
   color: #333333;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 25px;
 }
 .esn-card-item .apply-cta-wrap {
