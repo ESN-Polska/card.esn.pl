@@ -7,7 +7,7 @@
   input,
   textarea,
   select {
-    font-size: 1.5em;
+    font-size: 0.9em; /* Adjusted for consistency with other text */
     position: relative;
     z-index: 1;
     padding-right: 0;
@@ -77,7 +77,7 @@ footer {
 // Contact Form Card Styles
 .contact-form-card {
   background-color: $theme-success;
-  padding: 30px;
+  padding: 20px; /* Reduced padding to make the card smaller */
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
