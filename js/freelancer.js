@@ -46,13 +46,7 @@
     });
   });
 
-  // FAQ Accordion
-  $('#faq .faq-question').on('click', function() {
-    var item = $(this).closest('.faq-item');
-    item.toggleClass('active');
-    var answer = item.find('.faq-answer');
-    answer.slideToggle();
-  });
+
 
 })(jQuery); // End of use strict
 

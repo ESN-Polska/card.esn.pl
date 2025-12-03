@@ -12,10 +12,24 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  cursor: text;
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
+  }
+
+  // Focus state styling
+  &.floating-label-form-group-with-focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+  }
+
+  // Value state styling
+  &.floating-label-form-group-with-value {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   input,
@@ -23,23 +37,66 @@
   select {
     font-size: 1.1em;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     padding: 15px 0;
     resize: none;
     border: none;
     border-radius: 0;
-    background: transparent;
+    background: transparent !important;
     box-shadow: none !important;
-    color: white;
+    color: white !important;
     width: 100%;
+    pointer-events: auto;
+    cursor: text;
+    caret-color: white;
+    opacity: 1 !important;
+    -webkit-text-fill-color: white !important;
     
     &:focus {
       outline: none;
+      background: transparent !important;
+      cursor: text;
+      color: white !important;
+      -webkit-text-fill-color: white !important;
     }
     
     &::placeholder {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.6);
       opacity: 1;
+    }
+
+    // Prevent autofill white background
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: white !important;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+      color: white !important;
+    }
+  }
+
+  // Specific styling for select to prevent cutoff
+  select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 15px 40px 15px 15px;
+    line-height: 1.5;
+    height: auto;
+    min-height: 55px;
+    width: 100%;
+    display: block;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
+    
+    option {
+      background: variables.$theme-primary;
+      color: white;
+      padding: 10px;
     }
   }
 
@@ -80,7 +137,6 @@ footer {
 // Contact Form Card Styles
 .contact-form-card {
   background: linear-gradient(135deg, rgba(46, 49, 146, 0.95) 0%, rgba(46, 49, 146, 0.85) 100%);
-  backdrop-filter: blur(10px);
   padding: 50px;
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.1);
@@ -89,7 +145,6 @@ footer {
   transition: all 0.3s ease;
   
   &:hover {
-    transform: translateY(-5px);
     box-shadow: 0 35px 70px rgba(0,0,0,0.25);
   }
 
