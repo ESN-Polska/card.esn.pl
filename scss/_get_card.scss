@@ -86,3 +86,10 @@ section.get-your-card {
     // The background color is already set in _global.scss, but we can ensure it here or leave it.
     // We might want to add a subtle pattern or gradient if requested later.
 }
+
+@media (max-width: 767px) {
+  .esn-card-item {
+    min-height: 380px; /* Adjusted for smaller screens */
+    padding: 30px 20px; /* Reduced padding for mobile */
+  }
+}
