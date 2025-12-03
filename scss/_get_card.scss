@@ -1,4 +1,5 @@
 // Styling for the "Get your ESNcard" interactive cards
+@use "variables";
 
 .esn-card-item {
   background: #fff;
@@ -21,9 +22,9 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     
     .btn-order {
-      background-color: $theme-primary;
+      background-color: variables.$theme-primary;
       color: #fff;
-      border-color: $theme-primary;
+      border-color: variables.$theme-primary;
     }
   }
 
@@ -42,14 +43,14 @@
   }
 
   .apply-title {
-    color: $theme-primary;
+    color: variables.$theme-primary;
     font-weight: 700;
     margin-bottom: 10px;
     font-size: 1.5rem;
   }
 
   .card-description {
-    color: $gray-dark;
+    color: variables.$gray-dark;
     font-size: 1rem;
     margin-bottom: 15px; // Pushes button down
     min-height: 75px; // Ensure consistent height for alignment
@@ -67,8 +68,8 @@
     padding: 10px 30px;
     border-radius: 50px;
     background-color: transparent;
-    color: $theme-primary;
-    border: 2px solid $theme-primary;
+    color: variables.$theme-primary;
+    border: 2px solid variables.$theme-primary;
     font-weight: 700;
     text-transform: uppercase;
     transition: all 0.3s ease;

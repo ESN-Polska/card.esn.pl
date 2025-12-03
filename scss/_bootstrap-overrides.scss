@@ -1,4 +1,7 @@
 // Bootstrap overrides for this template
+@use "variables";
+@use "mixins" as *;
+
 .btn-outline {
   font-size: 20px;
   font-weight: 700;
@@ -11,27 +14,27 @@
   &:active,
   &:focus,
   &:hover {
-    color: $theme-success;
+    color: variables.$theme-success;
     border: solid 2px white;
     background: white;
   }
 }
 
 .btn-instruction {
-  background: $theme-primary;
+  background: variables.$theme-primary;
   &:hover {
-    color: $theme-primary;
+    color: variables.$theme-primary;
   }
 }
 
 .btn-primary {
   font-weight: 700;
-  @include button-variant(white, $theme-primary, $theme-primary);
+  @include button-variant(white, variables.$theme-primary, variables.$theme-primary);
 }
 
 .btn-success {
   font-weight: 1000;
-  @include button-variant(white, $theme-success, $theme-success);
+  @include button-variant(white, variables.$theme-success, variables.$theme-success);
 }
 
 .btn-social {

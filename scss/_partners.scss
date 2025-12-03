@@ -1,12 +1,23 @@
 // Styling for the partners section
+@use "variables";
+
 #partners {
-  .partners-item {
-    right: 0;
+    .partners-item {
     margin: 0 0 15px;
     padding: 15px;
     border: 1px solid #eee;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+
+    // Initial state for animation
+    opacity: 0;
+    transform: translateY(20px);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     &:hover {
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -27,7 +38,7 @@
         -moz-transition: all ease 0.5s;
         transition: all ease 0.5s;
         opacity: 0;
-        background: fade-out($theme-success, .1);
+        background: fade-out(variables.$theme-success, .1);
         &:hover {
           opacity: 1;
         }
@@ -112,7 +123,7 @@
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-      background-color: $theme-primary;
+      background-color: variables.$theme-primary;
       .rl {
         /* Safari and Chrome */
         z-index: 1052;
@@ -122,7 +133,7 @@
         -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
-        background-color: $theme-primary;
+        background-color: variables.$theme-primary;
       }
     }
   }
