@@ -25,7 +25,7 @@
       rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.css?v=5" rel="stylesheet">
+    <link href="css/freelancer.css?v=13" rel="stylesheet">
     
     <style>
     header.masthead .intro-text .description {
@@ -37,8 +37,56 @@
       -ms-hyphens: none !important;
     }
 
+    header.masthead {
+      background: #333092 !important;
+    }
+
     header.masthead img {
       max-width: 60% !important;
+    }
+
+    section.get-your-card {
+      background: #13B4F0 !important;
+    }
+
+    .floating-label-form-group label {
+      opacity: 1 !important;
+      top: -1.5em !important;
+      color: white !important;
+      text-align: left !important;
+      left: 0 !important;
+    }
+
+    .stats-section {
+      background: #333092;
+      padding: 80px 0;
+    }
+
+    .stat-box {
+      background: white;
+      border-radius: 15px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .stat-number {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #2E3192;
+      margin: 20px 0;
+    }
+
+    .stat-label {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
     }
 
     </style>
@@ -256,7 +304,34 @@ window.cookieconsent.initialise({
       </div>
     </section>
 
-
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="stat-box">
+              <i class="fa fa-credit-card fa-3x" style="color: #333092;"></i>
+              <div class="stat-number" data-target="50000">0</div>
+              <div class="stat-label">Number of ESNcards Sold</div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-box">
+              <i class="fa fa-handshake-o fa-3x" style="color: #333092;"></i>
+              <div class="stat-number" data-target="150">0</div>
+              <div class="stat-label">Number of ESNcard Partners</div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="stat-box">
+              <i class="fa fa-map-marker fa-3x" style="color: #333092;"></i>
+              <div class="stat-number" data-target="50">0</div>
+              <div class="stat-label">Number of ESNcard Partners in Poland</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -291,7 +366,7 @@ window.cookieconsent.initialise({
                     <p class="help-block text-danger"></p>
                   </div>
                 </div>
-                <!-- <div class="control-group">
+               <div class="control-group">
                   <div class="form-group floating-label-form-group controls">
                     <label>ESN Section</label>
                     <select class="form-control" id="section" name="section" required data-validation-required-message="Please select your section.">
@@ -360,7 +435,7 @@ window.cookieconsent.initialise({
                     </script>
                     <p class="help-block text-danger"></p>
                   </div>
-                </div> -->
+                </div>
                 <div class="control-group">
                   <div class="form-group floating-label-form-group controls">
                     <label>Message</label>
@@ -443,7 +518,7 @@ window.cookieconsent.initialise({
         </div>
       </footer>
 
-      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes -->
       <div class="scroll-top d-lg-none">
         <a class="btn btn-primary js-scroll-trigger" href="#page-top">
           <i class="fa fa-chevron-up"></i>
@@ -671,7 +746,7 @@ window.cookieconsent.initialise({
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
       <!-- Custom scripts for this template -->
-      <script src="js/freelancer.js"></script>
+      <script src="js/freelancer.js?v=2"></script>
 
       <!-- FAQ Accordion Script -->
       <script>
@@ -684,6 +759,44 @@ window.cookieconsent.initialise({
               item.classList.toggle('active');
             });
           });
+        });
+      </script>
+
+      <!-- Animated Counter Script -->
+      <script>
+        function animateCounter(element) {
+          const target = parseInt(element.getAttribute('data-target'));
+          const duration = 2000;
+          const increment = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              element.textContent = Math.floor(current).toLocaleString();
+              requestAnimationFrame(updateCounter);
+            } else {
+              element.textContent = target.toLocaleString();
+            }
+          };
+
+          updateCounter();
+        }
+
+        const observerOptions = {
+          threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && entry.target.textContent === '0') {
+              animateCounter(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(counter => {
+          observer.observe(counter);
         });
       </script>
     </body>
