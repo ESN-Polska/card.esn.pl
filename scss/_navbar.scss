@@ -1,9 +1,10 @@
 // Styling for the navbar
+@use "variables";
 #mainNav {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: none;
-  background: $theme-primary;
+  background: variables.$theme-primary;
   a:focus {
     outline: none;
   }
@@ -23,7 +24,7 @@
       a.nav-link {
         color: white;
         &:hover {
-          color: $theme-success;
+          color: variables.$theme-success;
           outline: none;
         }
         &:active,
@@ -41,8 +42,8 @@
     &:focus,
     &:hover {
       color: white;
-      border-color: $theme-success;
-      background-color: $theme-success;
+      border-color: variables.$theme-success;
+      background-color: variables.$theme-success;
     }
   }
 }
@@ -62,12 +63,12 @@
     .navbar-nav > li.nav-item > a.nav-link.active {
       color: white;
       border-radius: 3px;
-      background: $theme-success;
+      background: variables.$theme-success;
       &:active,
       &:focus,
       &:hover {
         color: white;
-        background: $theme-success;
+        background: variables.$theme-success;
       }
     }
   }

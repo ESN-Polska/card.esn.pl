@@ -1,3 +1,8 @@
+/*!
+ * Start Bootstrap - ESNcard ESN Poland webpage v1.0.0 ()
+ * Copyright 2013-2025 IT Committee of ESN Poland
+ * Licensed under MIT (https://github.com/BlackrockDigital/card.esn.pl/blob/master/LICENSE)
+ */
 body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -79,6 +84,15 @@ section {
 section h2 {
   font-size: 3em;
   margin: 0 0 50px 0;
+}
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 section.get-your-card {
@@ -214,8 +228,7 @@ header.masthead {
   background: #00aef0;
 }
 header.masthead img {
-  display: block;
-  margin: 0 auto 20px;
+  animation: float 3s ease-in-out infinite;
 }
 header.masthead .intro-text .name {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -226,14 +239,17 @@ header.masthead .intro-text .name {
 header.masthead .intro-text .description {
   font-size: 1.25em;
   font-weight: 300;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
+  line-height: 1.5;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 200px;
@@ -268,94 +284,43 @@ header.masthead .intro-text .description {
 }
 /* Partners Section - Modern Design */
 #partners .partners-item {
-  right: 0;
-  margin: 0 0 30px;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 20px;
-  background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, rgba(46, 49, 146, 0.3), rgba(0, 174, 240, 0.3)) border-box;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin: 0 0 15px;
+  padding: 15px;
+  border: 1px solid #eee;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
   opacity: 0;
-  transform: translateY(30px) scale(0.95);
-  will-change: transform, opacity;
-  overflow: hidden;
-  position: relative;
+  transform: translateY(20px);
 }
-
 #partners .partners-item.visible {
-  animation: partnerFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes partnerFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-#partners .partners-item:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
-  border-color: rgba(0, 174, 240, 0.5);
-}
-
-#partners .partners-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(46, 49, 146, 0.05), rgba(0, 174, 240, 0.05));
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  border-radius: 18px;
-}
-
-#partners .partners-item:hover::before {
   opacity: 1;
+  transform: translateY(0);
 }
-
+#partners .partners-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
 #partners .partners-item .partners-link {
   position: relative;
   display: block;
   max-width: 400px;
   margin: 0 auto;
   cursor: pointer;
-  padding: 25px;
-  transition: transform 0.3s ease;
 }
-
-#partners .partners-item:hover .partners-link {
-  transform: scale(1.02);
-}
-
 #partners .partners-item .partners-link .caption {
   position: absolute;
-  width: calc(100% - 50px);
-  height: calc(100% - 50px);
-  top: 25px;
-  left: 25px;
+  width: 100%;
+  height: 100%;
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
   opacity: 0;
-  background: linear-gradient(135deg, rgba(46, 49, 146, 0.95), rgba(0, 174, 240, 0.95));
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
+  background: rgba(0, 174, 240, 0.9);
 }
-
 #partners .partners-item .partners-link .caption:hover {
   opacity: 1;
 }
-
 #partners .partners-item .partners-link .caption .caption-content {
   font-size: 20px;
   position: absolute;
@@ -365,40 +330,21 @@ header.masthead .intro-text .description {
   margin-top: -12px;
   text-align: center;
   color: white;
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
 }
-
-#partners .partners-item .partners-link .caption:hover .caption-content {
-  transform: scale(1);
-}
-
 #partners .partners-item .partners-link .caption .caption-content i {
   margin-top: -12px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
-
 #partners .partners-item .partners-link .caption .caption-content h3,
 #partners .partners-item .partners-link .caption .caption-content h4 {
   margin: 0;
 }
-
-#partners .partners-item img {
-  transition: all 0.3s ease;
-  filter: grayscale(0.2);
-}
-
-#partners .partners-item:hover img {
-  filter: grayscale(0) brightness(1.1);
-}
-
 #partners * {
   z-index: 2;
 }
 
 @media (min-width: 767px) {
   #partners .partners-item {
-    margin: 0 0 40px;
+    margin: 0 0 30px;
   }
 }
 @media (max-width: 767px) {
@@ -480,55 +426,46 @@ header.masthead .intro-text .description {
 
 .floating-label-form-group {
   position: relative;
-  margin-bottom: 1.5em;
-  padding-bottom: 0;
-  border-bottom: none;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.floating-label-form-group:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 .floating-label-form-group input,
 .floating-label-form-group textarea,
 .floating-label-form-group select {
-  font-size: 1.5em;
+  font-size: 1.1em;
   position: relative;
   z-index: 1;
-  padding: 15px;
+  padding: 15px 0;
   resize: none;
-  border: 1px solid white;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 0;
+  background: transparent;
   box-shadow: none !important;
-  width: 100%;
   color: white;
+  width: 100%;
 }
-.floating-label-form-group label {
-  font-size: 0.85em;
-  line-height: 1.764705882em;
-  position: relative;
-  z-index: 0;
-  top: 2em;
-  display: block;
-  margin: 0;
-  -webkit-transition: top 0.3s ease, opacity 0.3s ease;
-  -moz-transition: top 0.3s ease, opacity 0.3s ease;
-  -ms-transition: top 0.3s ease, opacity 0.3s ease;
-  transition: top 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+.floating-label-form-group input:focus,
+.floating-label-form-group textarea:focus,
+.floating-label-form-group select:focus {
+  outline: none;
 }
-.floating-label-form-group:not(:first-child) {
-  padding-left: 0;
-  border-left: none;
-}
-
-.floating-label-form-group-with-value label {
-  top: 0;
+.floating-label-form-group input::placeholder,
+.floating-label-form-group textarea::placeholder,
+.floating-label-form-group select::placeholder {
+  color: rgba(255, 255, 255, 0.7);
   opacity: 1;
 }
-
-.floating-label-form-group-with-focus label {
-  color: #00aef0;
-}
-
-form .row:first-child .floating-label-form-group {
-  border-top: none;
+.floating-label-form-group label {
+  display: none;
 }
 
 footer {
@@ -546,38 +483,54 @@ footer .footer-col {
 }
 footer .footer-below {
   padding: 25px 0;
-  background-color: rgb(45.93890625, 48.934921875, 145.80609375);
+  background-color: rgb(39.890625, 42.4921875, 126.609375);
+}
+
+.contact h2 {
+  color: #2E3192 !important;
 }
 
 .contact-form-card {
-  background-color: #00aef0;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(46, 49, 146, 0.95) 0%, rgba(46, 49, 146, 0.85) 100%);
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   color: white;
+  transition: all 0.3s ease;
 }
 .contact-form-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
 }
-.contact-form-card .form-control {
-  color: white;
+.contact-form-card button.btn {
+  width: auto;
+  min-width: 150px;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  color: #2E3192;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.contact-form-card .form-control:focus {
-  background-color: rgba(255, 255, 255, 0.2);
+.contact-form-card button.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
-.contact-form-card ::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-.contact-form-card :-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-.contact-form-card ::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-.contact-form-card :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.7);
+.contact-form-card button.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
@@ -705,7 +658,6 @@ footer .footer-below {
     transform: translateY(0) scale(1);
   }
 }
-
 #faq {
   background-color: #f9f9f9;
   padding: 60px 0;
@@ -715,6 +667,67 @@ footer .footer-below {
   font-weight: 700;
   color: #2c3e50;
 }
+#faq .faq-search-wrapper {
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 60px;
+  background: #fff;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  z-index: 10;
+}
+#faq .faq-search-wrapper:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+#faq .faq-search-wrapper:focus-within {
+  box-shadow: 0 25px 50px -12px rgba(46, 49, 146, 0.25);
+  transform: translateY(-4px);
+  border-color: rgba(0, 174, 240, 0.5);
+}
+#faq .faq-search-wrapper:focus-within .faq-search-icon {
+  color: #00aef0;
+  transform: translateY(-50%) scale(1.2) rotate(10deg);
+}
+#faq .faq-search-wrapper:focus-within .faq-search-input::placeholder {
+  opacity: 0.5;
+}
+#faq .faq-search-wrapper .faq-search-input {
+  width: 100%;
+  border: none;
+  height: 60px;
+  padding-left: 60px;
+  padding-right: 25px;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  color: #2c3e50;
+  background: transparent;
+  font-weight: 500;
+  outline: none;
+  letter-spacing: 0.5px;
+}
+#faq .faq-search-wrapper .faq-search-input:focus {
+  box-shadow: none;
+  background: transparent;
+}
+#faq .faq-search-wrapper .faq-search-input::placeholder {
+  color: #aab7b8;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+#faq .faq-search-wrapper .faq-search-icon {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2e3192;
+  font-size: 1.4rem;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
 #faq .faq-item {
   background: #fff;
   border-radius: 12px;
@@ -723,14 +736,11 @@ footer .footer-below {
   border: 1px solid rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  opacity: 0; /* Initially hidden */
-  will-change: transform, opacity;
+  opacity: 0;
 }
-
 #faq .faq-item.visible {
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
-
 #faq .faq-item:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
@@ -754,11 +764,12 @@ footer .footer-below {
 #faq .faq-item .faq-question i {
   font-size: 1.2rem;
   color: #2e3192;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 #faq .faq-item .faq-answer {
-  display: none;
-  padding: 0 30px 25px 30px;
+  max-height: 0;
+  padding: 0 30px;
+  transition: max-height 0.4s ease-out, padding 0.4s ease;
 }
 #faq .faq-item .faq-answer p {
   color: #6c757d;
@@ -795,95 +806,26 @@ footer .footer-below {
   color: #2e3192;
 }
 #faq .faq-item.active .faq-question i {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
-
-/* Modern Search Bar Styles - Ultra Modern */
-.faq-search-wrapper {
-  position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
-  border-radius: 60px;
-  background: #fff;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 2px solid transparent; /* Reserve space for border transition */
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  z-index: 10;
-}
-
-.faq-search-wrapper:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
-.faq-search-wrapper:focus-within {
-  box-shadow: 0 25px 50px -12px rgba(46, 49, 146, 0.25);
-  transform: translateY(-4px);
-  border-color: rgba(0, 174, 240, 0.5);
-}
-
-/* Gradient border effect on focus-within (optional, using pseudo-element if needed, but border-color is cleaner here) */
-
-.faq-search-wrapper .faq-search-input {
-  width: 100%;
-  border: none;
-  height: 60px;
-  padding-left: 60px;
-  padding-right: 25px;
-  border-radius: 50px;
-  font-size: 1.25rem;
-  color: #2c3e50;
-  background: transparent;
-  font-weight: 500;
-  outline: none;
-  letter-spacing: 0.5px;
-}
-
-.faq-search-wrapper .faq-search-input:focus {
-  box-shadow: none;
-  background: transparent;
-}
-
-.faq-search-wrapper .faq-search-input::placeholder {
-  color: #aab7b8;
-  font-weight: 400;
-  transition: opacity 0.3s ease;
-}
-
-.faq-search-wrapper:focus-within .faq-search-input::placeholder {
-  opacity: 0.5;
-}
-
-.faq-search-icon {
-  position: absolute;
-  left: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #2e3192;
-  font-size: 1.4rem;
-  pointer-events: none;
-  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.faq-search-wrapper:focus-within .faq-search-icon {
-  color: #00aef0;
-  transform: translateY(-50%) scale(1.2) rotate(10deg);
+#faq .faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 30px 25px 30px;
 }
 
 .esn-card-item {
   background: #fff;
   border-radius: 15px;
-  padding: 40px 30px;
+  padding: 25px 20px;
   margin-bottom: 30px;
   text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  min-height: 550px;
+  min-height: 350px;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 .esn-card-item:hover {
@@ -896,11 +838,11 @@ footer .footer-below {
   border-color: #2E3192;
 }
 .esn-card-item .card-img {
-  max-height: 180px;
+  max-height: 150px;
   max-width: 100%;
   width: auto;
   height: auto;
-  margin: 0 auto 25px;
+  margin: 0 auto 15px;
   transition: all 0.3s ease;
   display: block;
 }
@@ -910,7 +852,7 @@ footer .footer-below {
 .esn-card-item .apply-title {
   color: #2E3192;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.5rem;
 }
 .esn-card-item .card-description {
@@ -935,83 +877,4 @@ footer .footer-below {
 }
 .esn-card-item .btn-order:hover {
   text-decoration: none;
-}
-
-@keyframes float {
-  0% {
-    transform: translate(0, 0px);
-  }
-  50% {
-    transform: translate(0, 15px);
-  }
-  100% {
-    transform: translate(0, -0px);
-  }
-}
-
-header.masthead img {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Typewriter Effect */
-.typewriter-char {
-  transition: opacity 0.1s ease;
-  display: inline-block; /* Allows transform if needed, but inline is safer for wrapping */
-  white-space: pre-wrap; /* Preserves spaces */
-}
-
-/* Optional: Add a blinking cursor at the end of the text container if desired, 
-   but for multi-line rich text, a simple typing effect is often cleaner. */
-
-/* Section Transition Animations */
-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-section.section-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section title animations */
-section h2 {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s;
-}
-
-section.section-visible h2 {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section content stagger */
-section .row,
-section .container > p,
-section .container > h3 {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out 0.4s, transform 0.6s ease-out 0.4s;
-}
-
-section.section-visible .row,
-section.section-visible .container > p,
-section.section-visible .container > h3 {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Header is always visible */
-header.masthead {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Override for elements that have their own animations */
-#partners .partners-item,
-#faq .faq-item,
-.esn-card-item {
-  transition: none; /* Let their own animations handle it */
 }
