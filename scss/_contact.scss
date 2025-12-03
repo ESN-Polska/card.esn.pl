@@ -21,7 +21,7 @@
   input,
   textarea,
   select {
-    font-size: 1.1em;
+    font-size: 0.9em; /* Adjusted for consistency with other text */
     position: relative;
     z-index: 1;
     padding: 15px 0;
@@ -79,12 +79,11 @@ footer {
 
 // Contact Form Card Styles
 .contact-form-card {
-  background: linear-gradient(135deg, rgba(46, 49, 146, 0.95) 0%, rgba(46, 49, 146, 0.85) 100%);
-  backdrop-filter: blur(10px);
-  padding: 50px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  background-color: $theme-success;
+  padding: 20px; /* Reduced padding to make the card smaller */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   color: white;
   transition: all 0.3s ease;
   
