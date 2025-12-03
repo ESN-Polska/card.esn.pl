@@ -1,4 +1,6 @@
 // Styling for the masthead
+@use "variables";
+
 header.masthead {
   padding-top: 100px;
   padding-bottom: 50px;
@@ -6,12 +8,12 @@ header.masthead {
   text-align: center;
 
   color: white;
-  background: $theme-success;
+  background: variables.$theme-success;
   img {
-    display: block;
-
-    margin: 0 auto 20px;
+  
+    animation: float 3s ease-in-out infinite; // Add floating animation
   }
+  
   .intro-text {
     .name {
       font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -25,6 +27,16 @@ header.masthead {
       font-weight: 300;
       line-height: 1.5;
     }
+  }
+}
+
+// Floating animation keyframes
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
 @media(min-width:768px) {

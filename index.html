@@ -25,7 +25,7 @@
       rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="css/freelancer.css?v=5" rel="stylesheet">
     
     <style>
     header.masthead .intro-text .description {
@@ -36,6 +36,11 @@
       -moz-hyphens: none !important;
       -ms-hyphens: none !important;
     }
+
+    header.masthead img {
+      max-width: 60% !important;
+    }
+
     </style>
 
     <!--Google Analytics -->
@@ -115,7 +120,7 @@ window.cookieconsent.initialise({
     <!-- Header -->
     <header class="masthead">
       <div class="container">
-        <img class="img-fluid" src="img/esncard.png" alt>
+        <img class="img-fluid" src="img/ESNcard-Filled-Shadow.png" alt>
         <div class="intro-text">
           <span class="name">What is ESNcard?</span>
           <span class="description" id="typewriter-text">The <b>ESNcard</b> is the membership card of the Erasmus Student Network (ESN). It is a <b>proof of membership</b> in an ESN section and so indirectly of the ESN network. The ESNcard is also used as a discount card in many cities and countries around Europe. Its main objective is to support and give opportunities to international students during and after their exchange period. The ESNcard is used annually by over <b>200,000 students in over 40 countries</b>, and the numbers are growing every year.</span>
@@ -128,46 +133,54 @@ window.cookieconsent.initialise({
       <div class="container">
         <h2 class="text-center">Partners</h2>
         <div class="row">
-          <div class="col-xs-6 col-md-3 partners-item">
-            <a class="partners-link" href="#partnersModal1" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+          <div class="col-6 col-md-3">
+            <div class="partners-item">
+              <a class="partners-link" href="#partnersModal1" data-toggle="modal">
+                <div class="caption">
+                  <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
                 </div>
-              </div>
-              <img class="img-fluid" src="img/partners/ryanair-logo.png" alt>
-            </a>
+                <img class="img-fluid" src="img/partners/ryanair-logo.png" alt>
+              </a>
+            </div>
           </div>
-          <div class="col-xs-6 col-md-3 partners-item">
-            <a class="partners-link" href="#partnersModal2" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+          <div class="col-6 col-md-3">
+            <div class="partners-item">
+              <a class="partners-link" href="#partnersModal2" data-toggle="modal">
+                <div class="caption">
+                  <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
                 </div>
-              </div>
-              <img class="img-fluid" src="img/partners/flixbus-logo.png" alt>
-            </a>
+                <img class="img-fluid" src="img/partners/flixbus-logo.png" alt>
+              </a>
+            </div>
           </div>
-          <div class="col-xs-6 col-md-3 partners-item">
-            <a class="partners-link" href="#partnersModal3" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+          <div class="col-6 col-md-3">
+            <div class="partners-item">
+              <a class="partners-link" href="#partnersModal3" data-toggle="modal">
+                <div class="caption">
+                  <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
                 </div>
-              </div>
-              <img class="img-fluid" src="img/partners/pepehousing-logo.png"
+                <img class="img-fluid" src="img/partners/pepehousing-logo.png"
                 alt>
-            </a>
+              </a>
+            </div>
           </div>
-          <div class="col-xs-6 col-md-3 partners-item">
-            <a class="partners-link" href="#partnersModal4" data-toggle="modal">
-              <div class="caption">
-                <div class="caption-content">
-                  <i class="fa fa-search-plus fa-3x"></i>
+          <div class="col-6 col-md-3">
+            <div class="partners-item">
+              <a class="partners-link" href="#partnersModal4" data-toggle="modal">
+                <div class="caption">
+                  <div class="caption-content">
+                    <i class="fa fa-search-plus fa-3x"></i>
+                  </div>
                 </div>
-              </div>
-              <img class="img-fluid" src="img/partners/orange_flex.png" alt>
-            </a>
+                <img class="img-fluid" src="img/partners/orange_flex.png" alt>
+              </a>
+            </div>
           </div>
         </div>
         <h3 class="text-center">You can find more discounts at <a
@@ -186,7 +199,7 @@ window.cookieconsent.initialise({
               <h4 class="apply-title">International Student</h4>
               <p class="card-description">Erasmus+, EVS, any other exchange programme or full-time student studying in Poland.</p>
               <div class="apply-cta-wrap">
-                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1350&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for International Student">Order Now</a>
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1350&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for International Student">Apply Now</a>
               </div>
             </div>
           </div>
@@ -196,7 +209,7 @@ window.cookieconsent.initialise({
               <h4 class="apply-title">Buddy</h4>
               <p class="card-description">An internal mentor programme managed by ESN sections in Poland.</p>
               <div class="apply-cta-wrap">
-                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1351&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for Buddy">Order Now</a>
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1351&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for Buddy">Apply Now</a>
               </div>
             </div>
           </div>
@@ -206,7 +219,7 @@ window.cookieconsent.initialise({
               <h4 class="apply-title">ESNer</h4>
               <p class="card-description">An active volunteer in Poland.</p>
               <div class="apply-cta-wrap">
-                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1352&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for ESNer">Order Now</a>
+                <a href="https://polisy.voyager.pl/PolisaOnline/Wybor.aspx?u=16&t=1352&Id=WWESNPOLKK&o=1" class="btn-order" aria-label="Order now for ESNer">Apply Now</a>
               </div>
             </div>
           </div>
@@ -248,7 +261,7 @@ window.cookieconsent.initialise({
     <!-- Contact Section -->
     <section class="contact" id="contact">
       <div class="container">
-        <h2 class="text-center">Contact Us!</h2>
+        <h2 class="text-center" style="font-size: 2.5rem !important; margin-bottom: 60px !important; display: block !important;">Contact Us!</h2>
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="contact-form-card">
@@ -358,7 +371,7 @@ window.cookieconsent.initialise({
                 <br>
                 <div id="success"></div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-lg" id="sendMessageButton">Send</button>
+                  <button type="submit" class="btn btn-success btn-lg" id="sendMessageButton">Send</button>
                 </div>
               </form>
             </div>
