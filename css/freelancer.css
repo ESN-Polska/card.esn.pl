@@ -253,36 +253,15 @@ header.masthead .intro-text .description {
 @media (min-width: 768px) {
   header.masthead {
     padding-top: 200px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
   }
   header.masthead .intro-text .name {
     font-size: 4.75em;
   }
   header.masthead .intro-text .description {
-    font-size: 1.5em;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
+    font-size: 1.75em;
   }
 }
-
-@media (max-width: 767px) {
-  header.masthead {
-    padding-top: 70px; /* Reduce top padding for mobile */
-    padding-bottom: 30px; /* Reduce bottom padding for mobile */
-  }
-  header.masthead img {
-    max-width: 70%; /* Make the image smaller on mobile */
-    margin-bottom: 15px; /* Adjust margin below the image */
-  }
-  header.masthead .intro-text .description {
-    font-size: 1em; /* Slightly reduce font size for description on mobile */
-  }
-}
-/* Partners Section - Modern Design */
 #partners .partners-item {
   margin: 0 0 15px;
   padding: 15px;
@@ -345,16 +324,6 @@ header.masthead .intro-text .description {
 @media (min-width: 767px) {
   #partners .partners-item {
     margin: 0 0 30px;
-  }
-}
-@media (max-width: 767px) {
-  #partners .partners-item {
-    margin: 0 0 20px;
-    padding: 0;
-    width: 75%; /* Reduce the width of the partner items */
-    margin-left: auto; /* Center the items horizontally */
-    margin-right: auto;
-
   }
 }
 .partners-modal .modal-dialog {
@@ -451,7 +420,7 @@ header.masthead .intro-text .description {
 .floating-label-form-group input,
 .floating-label-form-group textarea,
 .floating-label-form-group select {
-  font-size: 1.1em;
+  font-size: 0.9em; /* Adjusted for consistency with other text */
   position: relative;
   z-index: 10;
   padding: 15px 0;
@@ -907,11 +876,12 @@ footer .footer-below {
 }
 .esn-card-item .card-description {
   color: #333333;
-  font-size: 1.1rem;
-  margin-bottom: 25px;
-}
-.esn-card-item .apply-cta-wrap {
-  margin-top: auto;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .esn-card-item .btn-order {
   display: inline-block;
@@ -927,4 +897,11 @@ footer .footer-below {
 }
 .esn-card-item .btn-order:hover {
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .esn-card-item {
+    min-height: 380px; /* Adjusted for smaller screens */
+    padding: 30px 20px; /* Reduced padding for mobile */
+  }
 }
